@@ -17,6 +17,7 @@ import org.IrvinCampos.resources.TestDataBuild;
 import org.IrvinCampos.resources.Utils;
 import org.testng.Assert;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class StepDefinitions extends Utils {
     Utils utils = new Utils();
 
     @Given("Add Place Payload")
-    public void add_place_payload() {
+    public void add_place_payload() throws FileNotFoundException {
 
         RequestSpecification response = given().spec(requestSpecificationUtil()).body(testDataBuild.addPlacePayLoad());
         resspec =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
