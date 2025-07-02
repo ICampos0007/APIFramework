@@ -8,15 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestDataBuild {
-    public AddPlace addPlacePayLoad() {
+    public AddPlace addPlacePayLoad(String name, String language, String address) {
         RestAssured.baseURI = "https://rahulshettyacademy.com/";
         AddPlace addPlace = new AddPlace();
         addPlace.setAccuracy(50);
-        addPlace.setAddress("29, side layout, cohen 09");
-        addPlace.setLanguage("French-IN");
+        addPlace.setAddress(address);
+        addPlace.setLanguage(language);
         addPlace.setPhoneNumber("(+1) 123 456 7890");
         addPlace.setWebsite("https://rahulshettyacademy.com/");
-        addPlace.setName("Front line house");
+        addPlace.setName(name);
         List<String> myList = new ArrayList<>();
         myList.add("shoe park");
         myList.add("shop");

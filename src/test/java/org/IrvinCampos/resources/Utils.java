@@ -10,13 +10,16 @@ import java.io.*;
 import java.util.Properties;
 
 public class Utils {
-    RequestSpecification requestSpecification;
+    public  static RequestSpecification requestSpecification;
     public RequestSpecification requestSpecificationUtil() throws IOException {
-        PrintStream printStream = new PrintStream(new FileOutputStream("logging.txt"));
-        requestSpecification = new RequestSpecBuilder().setBaseUri(getGlobalValue("baseURL")).addQueryParam("key","qaclick123")
-                .addFilter(RequestLoggingFilter.logRequestTo(printStream))
-                .addFilter(ResponseLoggingFilter.logResponseTo(printStream))
-                .setContentType(ContentType.JSON).build();
+        if (requestSpecification == null) {
+            PrintStream printStream = new PrintStream(new FileOutputStream("logging.txt"));
+            requestSpecification = new RequestSpecBuilder().setBaseUri(getGlobalValue("baseURL")).addQueryParam("key", "qaclick123")
+                    .addFilter(RequestLoggingFilter.logRequestTo(printStream))
+                    .addFilter(ResponseLoggingFilter.logResponseTo(printStream))
+                    .setContentType(ContentType.JSON).build();
+            return requestSpecification;
+        }
         return requestSpecification;
     }
 

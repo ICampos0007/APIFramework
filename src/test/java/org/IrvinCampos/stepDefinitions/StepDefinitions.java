@@ -32,13 +32,13 @@ public class StepDefinitions extends Utils {
     TestDataBuild testDataBuild = new TestDataBuild();
     Utils utils = new Utils();
 
-    @Given("Add Place Payload")
-    public void add_place_payload() throws IOException {
+    @Given("Add Place Payload with {string} {string} {string}")
+    public void add_place_payload_with(String name, String language, String address) throws IOException {
 
-        RequestSpecification response = given().spec(requestSpecificationUtil()).body(testDataBuild.addPlacePayLoad());
+        RequestSpecification response = given().spec(requestSpecificationUtil()).body(testDataBuild.addPlacePayLoad(name, language, address));
         resspec =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
         res=given().spec(requestSpecificationUtil())
-                .body(testDataBuild.addPlacePayLoad());
+                .body(testDataBuild.addPlacePayLoad(name, language, address));
     }
     @When("user calls {string} with Post http request")
     public void user_calls_with_post_http_request(String string) {
