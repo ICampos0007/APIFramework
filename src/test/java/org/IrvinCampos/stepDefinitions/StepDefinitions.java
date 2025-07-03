@@ -13,6 +13,7 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.IrvinCampos.pojo.AddPlace;
 import org.IrvinCampos.pojo.Location;
+import org.IrvinCampos.resources.APIResources;
 import org.IrvinCampos.resources.TestDataBuild;
 import org.IrvinCampos.resources.Utils;
 import org.testng.Assert;
@@ -40,10 +41,18 @@ public class StepDefinitions extends Utils {
         res=given().spec(requestSpecificationUtil())
                 .body(testDataBuild.addPlacePayLoad(name, language, address));
     }
-    @When("user calls {string} with Post http request")
-    public void user_calls_with_post_http_request(String string) {
-        response =res.when().post("/maps/api/place/add/json").
-                then().spec(resspec).extract().response();
+    @When("user calls {string} with {string} http request")
+    public void user_calls_with_post_http_request(String resource, String method) {
+        APIResources apiResources = APIResources.valueOf(resource);
+        System.out.println(apiResources.getResource());
+        if (method.equalsIgnoreCase("POST")) {
+            response =res.when().post(apiResources.getResource()).
+                    then().spec(resspec).extract().response();
+        } else if (method.equalsIgnoreCase("GET")) {
+            response =res.when().get(apiResources.getResource()).
+                    then().spec(resspec).extract().response();
+        }
+
     }
     @Then("the API call is success with status code {int}")
     public void the_api_call_is_success_with_status_code(Integer int1) {
