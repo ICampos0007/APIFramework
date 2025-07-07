@@ -60,8 +60,12 @@ public class StepDefinitions extends Utils {
     }
     @Then("{string} in response is {string}")
     public void in_response_is(String key, String value) {
-        String resp = response.asString();
-        JsonPath jsonPath = new JsonPath(resp);
-        Assert.assertEquals(jsonPath.get(key).toString(),value);
+        Assert.assertEquals(getJSonPath(response,key),value);
     }
+
+    @Then("verify place id created maps to {string} using getPlaceAPI")
+    public void verify_place_id_created_maps_to_using_get_place_api(String string) throws IOException {
+        // requestSpec
+        String place_id = getJSonPath(response,"place_id");
+        res=given().spec(requestSpecificationUtil()).queryParam("place_id",place_id); }
 }
