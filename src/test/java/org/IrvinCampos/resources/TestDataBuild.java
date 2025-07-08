@@ -28,4 +28,9 @@ public class TestDataBuild {
         addPlace.setLocation(location);
         return addPlace;
     }
+
+    public String deletePlacePayload(String placeId) {
+        return "{\n  \"place_id\": \""+placeId+"\"\n}";
+    }
+
 }

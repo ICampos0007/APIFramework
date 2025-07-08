@@ -1,5 +1,6 @@
 package org.IrvinCampos.stepDefinitions;
 
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,12 +33,19 @@ public class StepDefinitions extends Utils {
     Response response;
     TestDataBuild testDataBuild = new TestDataBuild();
     Utils utils = new Utils();
+    static String place_id;
+
+    @Before
+    public void setup() {
+        resspec =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+    }
+
 
     @Given("Add Place Payload with {string} {string} {string}")
     public void add_place_payload_with(String name, String language, String address) throws IOException {
 
         RequestSpecification response = given().spec(requestSpecificationUtil()).body(testDataBuild.addPlacePayLoad(name, language, address));
-        resspec =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+//        resspec =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
         res=given().spec(requestSpecificationUtil())
                 .body(testDataBuild.addPlacePayLoad(name, language, address));
     }
@@ -66,10 +74,17 @@ public class StepDefinitions extends Utils {
     @Then("verify place id created maps to {string} using {string}")
     public void verify_place_id_created_maps_to_using_get_place_api(String ExpectedName, String resource) throws IOException {
         // requestSpec
-        String place_id = getJSonPath(response,"place_id");
+        place_id = getJSonPath(response,"place_id");
         res=given().spec(requestSpecificationUtil()).queryParam("place_id",place_id);
         user_calls_with_post_http_request(resource,"GET");
         String actualName = getJSonPath(response,"name");
         Assert.assertEquals(actualName, ExpectedName);
+    }
+
+    @Given("DeletePlace Payload")
+    public void delete_place_payload() throws IOException {
+        // Write code here that turns the phrase above into concrete actions
+//        resspec =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+        res=given().spec(requestSpecificationUtil()).body(testDataBuild.deletePlacePayload(place_id));
     }
 }
