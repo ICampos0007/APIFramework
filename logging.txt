@@ -27,7 +27,7 @@ Body:
     ]
 }
 HTTP/1.1 200 OK
-Date: Mon, 07 Jul 2025 20:16:59 GMT
+Date: Tue, 08 Jul 2025 02:03:08 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -40,8 +40,46 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "4aebd7770e69696d31d1ac78f9ef45a4",
+    "place_id": "e36a16c25b14873d4a181caef134beb3",
     "scope": "APP",
-    "reference": "f8f2e2a8c5d241c978f806ec2df666c5f8f2e2a8c5d241c978f806ec2df666c5",
-    "id": "f8f2e2a8c5d241c978f806ec2df666c5"
+    "reference": "e1019a05ccec92175427be800d2524d5e1019a05ccec92175427be800d2524d5",
+    "id": "e1019a05ccec92175427be800d2524d5"
+}
+Request method:	GET
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=e36a16c25b14873d4a181caef134beb3
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+				place_id=e36a16c25b14873d4a181caef134beb3
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Tue, 08 Jul 2025 02:03:10 GMT
+Server: Apache/2.4.52 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 237
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "location": {
+        "latitude": "-38.383494",
+        "longitude": "33.427362"
+    },
+    "accuracy": "50",
+    "name": "AAhouse",
+    "phone_number": "",
+    "address": "World Cross Center",
+    "types": "shoe park,shop",
+    "website": "https://rahulshettyacademy.com/",
+    "language": "English"
 }

@@ -63,9 +63,13 @@ public class StepDefinitions extends Utils {
         Assert.assertEquals(getJSonPath(response,key),value);
     }
 
-    @Then("verify place id created maps to {string} using getPlaceAPI")
-    public void verify_place_id_created_maps_to_using_get_place_api(String string) throws IOException {
+    @Then("verify place id created maps to {string} using {string}")
+    public void verify_place_id_created_maps_to_using_get_place_api(String ExpectedName, String resource) throws IOException {
         // requestSpec
         String place_id = getJSonPath(response,"place_id");
-        res=given().spec(requestSpecificationUtil()).queryParam("place_id",place_id); }
+        res=given().spec(requestSpecificationUtil()).queryParam("place_id",place_id);
+        user_calls_with_post_http_request(resource,"GET");
+        String actualName = getJSonPath(response,"name");
+        Assert.assertEquals(actualName, ExpectedName);
+    }
 }
