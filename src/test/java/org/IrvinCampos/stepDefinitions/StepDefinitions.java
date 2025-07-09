@@ -4,28 +4,18 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import org.IrvinCampos.pojo.AddPlace;
-import org.IrvinCampos.pojo.Location;
 import org.IrvinCampos.resources.APIResources;
 import org.IrvinCampos.resources.TestDataBuild;
 import org.IrvinCampos.resources.Utils;
 import org.testng.Assert;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.requestSpecification;
+
 
 public class StepDefinitions extends Utils {
     RequestSpecification res;
