@@ -12,9 +12,9 @@ Multiparts:		<none>
 Body:
 {
     "accuracy": 50,
-    "name": "Cozy",
+    "name": "AAhouse",
     "phoneNumber": "(+1) 123 456 7890",
-    "address": "Madrid",
+    "address": "World Cross Center",
     "website": "https://rahulshettyacademy.com/",
     "language": "English",
     "location": {
@@ -27,7 +27,7 @@ Body:
     ]
 }
 HTTP/1.1 200 OK
-Date: Wed, 09 Jul 2025 20:19:17 GMT
+Date: Thu, 10 Jul 2025 22:45:24 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -40,17 +40,17 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "464dbae76eb664d0e7d9dece052aff67",
+    "place_id": "e169d53fa67fb56b23c6f8025ac64f12",
     "scope": "APP",
-    "reference": "a99f6571964a7fadfc2a6385a33d3394a99f6571964a7fadfc2a6385a33d3394",
-    "id": "a99f6571964a7fadfc2a6385a33d3394"
+    "reference": "2adbe88b50cbd1b7cc7985d196c900d52adbe88b50cbd1b7cc7985d196c900d5",
+    "id": "2adbe88b50cbd1b7cc7985d196c900d5"
 }
 Request method:	GET
-Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=464dbae76eb664d0e7d9dece052aff67
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=e169d53fa67fb56b23c6f8025ac64f12
 Proxy:			<none>
 Request params:	<none>
 Query params:	key=qaclick123
-				place_id=464dbae76eb664d0e7d9dece052aff67
+				place_id=e169d53fa67fb56b23c6f8025ac64f12
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
@@ -59,13 +59,13 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Wed, 09 Jul 2025 20:19:18 GMT
+Date: Thu, 10 Jul 2025 22:45:25 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
 Access-Control-Max-Age: 3600
 Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 222
+Content-Length: 237
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/json;charset=UTF-8
@@ -76,9 +76,9 @@ Content-Type: application/json;charset=UTF-8
         "longitude": "33.427362"
     },
     "accuracy": "50",
-    "name": "Cozy",
+    "name": "AAhouse",
     "phone_number": "",
-    "address": "Madrid",
+    "address": "World Cross Center",
     "types": "shoe park,shop",
     "website": "https://rahulshettyacademy.com/",
     "language": "English"
@@ -96,10 +96,10 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "place_id": "464dbae76eb664d0e7d9dece052aff67"
+    "place_id": "e169d53fa67fb56b23c6f8025ac64f12"
 }
 HTTP/1.1 200 OK
-Date: Wed, 09 Jul 2025 20:19:20 GMT
+Date: Thu, 10 Jul 2025 22:45:28 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST

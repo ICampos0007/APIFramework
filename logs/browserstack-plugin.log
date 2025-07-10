@@ -99,3 +99,5 @@
 13:19:17.797 [ApplicationImpl pooled thread 46] INFO  c.b.l.BrowserStackRunExtension - testng
 13:19:17.797 [ApplicationImpl pooled thread 46] INFO  com.browserstack.utils.Helpers - null
 13:19:17.804 [ApplicationImpl pooled thread 46] INFO  c.b.l.BrowserStackRunExtension - Agent path: null
+15:47:39.149 [AWT-EventQueue-0] INFO  c.b.actions.EnableBrowserStack - Setting enable browserstack run update
+15:47:39.157 [AWT-EventQueue-0] INFO  c.b.actions.DisableBrowserStack - Setting disable browserstack run update
